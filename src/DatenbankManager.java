@@ -85,11 +85,15 @@ public class DatenbankManager {
             stmt.execute("CREATE TABLE IF NOT EXISTS zuordnung (" +
                     "id INTEGER PRIMARY KEY, " +
                     "teilnehmer_id INTEGER, " +
-                    "aktivitaet_id INTEGER, " +
+                    "ausbilder_id INTEGER, " +
                     "wochentag_id INTEGER, " +
+                    "aktivitaet_id INTEGER, " +
+                    "jahr INTEGER, " +
+                    "kalenderwoche INTEGER, " +
                     "FOREIGN KEY (teilnehmer_id) REFERENCES teilnehmer(id), " +
                     "FOREIGN KEY (aktivitaet_id) REFERENCES aktivitaeten(id), " +
-                    "FOREIGN KEY (wochentag_id) REFERENCES wochentage(id)");
+                    "FOREIGN KEY (wochentag_id) REFERENCES wochentage(id), " +
+                    "FOREIGN KEY (ausbilder_id) REFERENCES ausbilder(id)");
 
             // Befülle wochentage mit Daten
             stmt.execute("INSERT INTO wochentage (id, name) VALUES " +
