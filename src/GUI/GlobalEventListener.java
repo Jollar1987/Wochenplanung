@@ -1,3 +1,5 @@
+package GUI;
+
 import java.awt.event.*;
 
 public class GlobalEventListener implements WindowListener, MouseListener, ActionListener {

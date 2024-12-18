@@ -1,3 +1,5 @@
+package Datenbank;
+
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
@@ -75,7 +77,7 @@ public class DatenbankManager {
     public List<Teilnehmer> getTeilnehmer() {
         List<Teilnehmer> teilnehmerListe = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM Teilnehmer";
+            String sql = "SELECT * FROM Datenbank.Teilnehmer";
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
@@ -118,7 +120,7 @@ public class DatenbankManager {
                     "(7, 'Sonntag');");
         }
         catch(SQLException e) {
-            System.out.println("Fehler bei der Erstellung der Datenbank-Datei: " + e.getMessage());
+            System.out.println("Default Daten existieren schon" + e.getMessage());
         }
     }
     public void erstelleDatenbank() {
@@ -131,7 +133,7 @@ public class DatenbankManager {
             }
         }
         try {
-            // Erstelle Tabelle Teilnehmer
+            // Erstelle Tabelle Datenbank.Teilnehmer
             stmt.execute("CREATE TABLE IF NOT EXISTS teilnehmer (" +
                     "id INTEGER PRIMARY KEY, " +
                     "name TEXT, " +
@@ -139,13 +141,13 @@ public class DatenbankManager {
                     "ausbildungsberuf TEXT, " +
                     "gruppe TEXT);");
 
-            // Erstelle Tabelle Ausbildungsberufe
+            // Erstelle Tabelle Datenbank.Ausbildungsberufe
             stmt.execute("CREATE TABLE IF NOT EXISTS ausbildungsberufe (" +
                     "id INTEGER PRIMARY KEY, " +
                     "bezeichnung TEXT, " +
                     "volleBezeichnung TEXT);");
 
-            // Erstelle Tabelle Ausbilder
+            // Erstelle Tabelle Datenbank.Ausbilder
             stmt.execute("CREATE TABLE IF NOT EXISTS ausbilder (" +
                     "id INTEGER PRIMARY KEY, " +
                     "name TEXT, " +
@@ -157,12 +159,12 @@ public class DatenbankManager {
                     "bezeichnung TEXT, " +
                     "volleBezeichnung TEXT);");
 
-            // Erstelle Tabelle Wochentage
+            // Erstelle Tabelle Datenbank.Wochentage
             stmt.execute("CREATE TABLE IF NOT EXISTS wochentage (" +
                     "id INTEGER PRIMARY KEY, " +
                     "name TEXT);");
 
-            // Erstelle Tabelle Zuordnung von Aktivitäten/Aufgaben zu Teilnehmern und Wochentagen
+            // Erstelle Tabelle Datenbank.Zuordnung von Aktivitäten/Aufgaben zu Teilnehmern und Wochentagen
             stmt.execute("CREATE TABLE IF NOT EXISTS zuordnung (" +
                     "id INTEGER PRIMARY KEY, " +
                     "teilnehmer_id INTEGER, " +

@@ -1,3 +1,5 @@
+package Datenbank;
+
 public class Ausbilder {
     private int id;
     private String name;

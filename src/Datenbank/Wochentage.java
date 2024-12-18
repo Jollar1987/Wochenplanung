@@ -1,3 +1,5 @@
+package Datenbank;
+
 public class Wochentage {
     private int id;
     private String name;

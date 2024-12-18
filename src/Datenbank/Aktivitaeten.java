@@ -1,3 +1,5 @@
+package Datenbank;
+
 public class Aktivitaeten {
     private int id;
     private String bezeichnung;

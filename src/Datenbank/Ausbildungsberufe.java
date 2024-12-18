@@ -1,3 +1,5 @@
+package Datenbank;
+
 public class Ausbildungsberufe {
     private int id;
     private String bezeichnung;

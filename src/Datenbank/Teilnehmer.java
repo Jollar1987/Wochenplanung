@@ -1,3 +1,5 @@
+package Datenbank;
+
 public class Teilnehmer {
     private int id;
     private String name;
