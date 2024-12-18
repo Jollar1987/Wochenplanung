@@ -19,8 +19,7 @@ public class Zuordnung {
         this.kalenderwoche = kalenderwoche;
     }
 
-    public Zuordnung(int id, Teilnehmer teilnehmer, Ausbilder ausbilder, Wochentage wochentag, Aktivitaeten aktivitaet) {
-        this.id = id;
+    public Zuordnung(Teilnehmer teilnehmer, Ausbilder ausbilder, Wochentage wochentag, Aktivitaeten aktivitaet) {
         this.teilnehmer = teilnehmer;
         this.ausbilder = ausbilder;
         this.wochentag = wochentag;
