@@ -2,13 +2,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 public class UI {
-    private JFrame frame;
-    private JButton button;
+    private final JFrame mainFrame;
+    private final JButton button;
 
     public UI(){
-        this.frame = new JFrame("Mein UI");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.mainFrame = new JFrame("Mein UI");
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.button = new JButton("Klick mich!");
     }
@@ -21,8 +23,8 @@ public class UI {
             }
         });
 
-        frame.getContentPane().add(button, BorderLayout.CENTER);
-        frame.setSize(300, 250);
-        frame.setVisible(true);
+        mainFrame.getContentPane().add(button, BorderLayout.CENTER);
+        mainFrame.setSize(300, 250);
+        mainFrame.setVisible(true);
     }
 }
