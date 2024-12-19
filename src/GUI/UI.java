@@ -13,18 +13,27 @@ public class UI extends JFrame {
     private JPanel panel2;
 
     public UI(){
+        createUI();
+        addUI();
+    }
+
+    /**
+     * Adds the UI elements to the frame. This method should only be called
+     * after createUI() has been called.
+     */
+    private void addUI() {
+        addButtons();
+        addPanels();
+        addTabbedPanes();
+        setFrame();
+    }
+    public void createUI() {
         createButtonsTab1();
         createButtonsTab2();
         createPanels();
         createTabbedPane();
         createFrame();
-        setButtons();
-        setPanels();
-        setTabbedPanes();
-        setFrame();
-        //createUI();
     }
-
     private void setFrame() {
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.add(tabbedPane);
@@ -32,16 +41,16 @@ public class UI extends JFrame {
         mainFrame.setVisible(true);
     }
 
-    private void setTabbedPanes() {
+    private void addTabbedPanes() {
         mainFrame.add(tabbedPane);
     }
 
-    private void setPanels() {
+    private void addPanels() {
         tabbedPane.add("Panel 1", panel1);
         tabbedPane.add("Panel 2", panel2);
     }
 
-    private void setButtons() {
+    private void addButtons() {
         for (JButton button : panel1Buttons) {
             panel1.add(button);
         }
@@ -75,7 +84,5 @@ public class UI extends JFrame {
         this.panel2Buttons.add(new JButton("Button 4"));
     }
 
-    public void createUI() {
 
-    }
 }

@@ -11,14 +11,4 @@ class Main {
         UI gui = new UI();
 
     }
-
-    public static void loesche(DatenbankManager dbm) {
-        dbm.loescheDatenbank();
-        dbm.entferneInhaltAusTabelle("wochentage");
-        dbm.dbInfo();
-        dbm.loescheTabelle("teilnehmer");
-        dbm.dbInfo();
-        dbm.loescheDatenbank();
-        dbm.dbInfo();
-    }
 }

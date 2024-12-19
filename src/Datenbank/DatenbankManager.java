@@ -18,7 +18,17 @@ public class DatenbankManager {
 
     public DatenbankManager(){
         connectToDataBase();
-        erstelleDatenbank();
+        //erstelleDatenbank();
+        //updateDatenbank();
+    }
+
+    public void updateDatenbank() {
+        try {
+            stmt.execute("ALTER TABLE aktivitaeten ADD COLUMN aktivitaetsNummer INTEGER");
+        }
+        catch (SQLException e) {
+
+        }
     }
     public void entferneInhaltAusTabelle(String tableName) {
         try {
