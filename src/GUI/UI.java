@@ -11,7 +11,9 @@ public class UI extends JFrame {
     private ArrayList<JButton> panel2Buttons = new ArrayList<>();
     private JPanel panel1;
     private JPanel panel2;
-
+    private JPanel panel3;
+    private JPanel panel4;
+    private JPanel panel5;
     public UI(){
         createUI();
         addUI();
@@ -37,7 +39,7 @@ public class UI extends JFrame {
     private void setFrame() {
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.add(tabbedPane);
-        mainFrame.setSize(300, 250);
+        mainFrame.setSize(600, 450);
         mainFrame.setVisible(true);
     }
 
@@ -46,8 +48,11 @@ public class UI extends JFrame {
     }
 
     private void addPanels() {
-        tabbedPane.add("Panel 1", panel1);
-        tabbedPane.add("Panel 2", panel2);
+        tabbedPane.add("Wochenplanung", panel1);
+        tabbedPane.add("Teilnehmer", panel2);
+        tabbedPane.add("Ausbilder", panel3);
+        tabbedPane.add("Aktivitaeten", panel4);
+        tabbedPane.add("Ausbildungsberufe", panel5);
     }
 
     private void addButtons() {
@@ -62,16 +67,17 @@ public class UI extends JFrame {
     private void createPanels() {
         panel1 = new JPanel();
         panel2 = new JPanel();
+        panel3 = new JPanel();
+        panel4 = new JPanel();
+        panel5 = new JPanel();
     }
 
     private void createTabbedPane() {
         tabbedPane = new JTabbedPane();
-        tabbedPane.add("Panel 1", panel1);
-        tabbedPane.add("Panel 2", panel2);
     }
 
     private void createFrame() {
-        this.mainFrame = new JFrame("Mein GUI.UI");
+        this.mainFrame = new JFrame("Wochenplanung");
     }
 
     private void createButtonsTab1() {
